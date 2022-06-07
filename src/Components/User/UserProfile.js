@@ -1,10 +1,10 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import Feed from "../Feed/Feed";
-import Head from "../Helper/Head";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import Feed from '../Feed/Feed';
+import Head from '../Helper/Head';
 
 const UserProfile = () => {
-  const { user } = useParams(); // Quando mexemos com parametros ex:/perfil/cat
+  const { user } = useParams();
 
   return (
     <section className="container mainSection">

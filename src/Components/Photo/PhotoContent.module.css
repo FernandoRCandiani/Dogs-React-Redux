@@ -25,11 +25,11 @@
 }
 
 .details {
-  padding: 1rem 2rem 0 2rem;
+  padding: 2rem 2rem 0 2rem;
 }
 
 .single .details {
-  padding: 2rem 0px 0px 0px;
+  padding: 1rem 0px 0px 0px;
 }
 
 .img {
@@ -38,7 +38,7 @@
 
 .single .img {
   grid-row: 1;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   overflow: hidden;
 }
 

@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Loading.module.css";
+import React from 'react';
+import styles from './Loading.module.css';
 
 const Loading = () => {
   const [step, setStep] = React.useState(0);
@@ -7,20 +7,20 @@ const Loading = () => {
   React.useEffect(() => {
     function updateStep() {
       setStep((step) => {
-        if(step < 3) return step + 1;
+        if (step < 3) return step + 1;
         else return 0;
-      })
+      });
     }
     const interval = setInterval(updateStep, 300);
     return () => {
       clearInterval(interval);
-    }
+    };
   }, []);
 
   function displayStep(i) {
     return {
-      display: step === i ? "block" : "none"
-    }
+      display: step === i ? 'block' : 'none',
+    };
   }
 
   return (
@@ -61,7 +61,6 @@ const Loading = () => {
               fill="#333"
             />
           </g>
-
           <g style={displayStep(2)}>
             <path
               fillRule="evenodd"
@@ -82,7 +81,6 @@ const Loading = () => {
               fill="#333"
             />
           </g>
-
           <g style={displayStep(3)}>
             <path
               fillRule="evenodd"
@@ -90,7 +88,6 @@ const Loading = () => {
               d="M9.71327 11.2838C9.31961 10.9487 9.0105 10.5102 8.83007 9.99974C8.4168 8.8305 7.30153 8 6 8C4.34314 8 3 9.34314 3 11C3 11.7703 3.28637 12.4665 3.76319 12.9993C4.78265 14.1383 4.78265 15.8617 3.76319 17.0007C3.28637 17.5335 3 18.2297 3 19C3 20.6569 4.34314 22 6 22C7.30153 22 8.4168 21.1695 8.83007 20.0003C9.0105 19.4898 9.31961 19.0513 9.71327 18.7162C10.1296 19.7556 10.7154 20.709 11.4365 21.5419C10.4796 23.5849 8.40507 25 6 25C2.68629 25 0 22.3137 0 19C0 17.4633 0.577705 16.0615 1.52779 15C0.577705 13.9385 0 12.5367 0 11C0 7.68629 2.68629 5 6 5C8.40508 5 10.4796 6.41508 11.4365 8.45807C10.7154 9.29104 10.1296 10.2444 9.71327 11.2838ZM27.1532 9.20856C27.1406 9.1393 27.1288 9.06978 27.1178 9H27.0007C27.0524 9.06884 27.1033 9.13836 27.1532 9.20856Z"
               fill="#333"
             />
-
             <path
               d="M16.839 6.06068C17.4248 5.47489 18.3745 5.47489 18.9603 6.06068C19.5461 6.64646 19.5461 7.59621 18.9603 8.182L16.839 10.3033C16.2532 10.8891 15.3034 10.8891 14.7177 10.3033C14.1319 9.71753 14.1319 8.76778 14.7177 8.182L16.839 6.06068Z"
               fill="#333"

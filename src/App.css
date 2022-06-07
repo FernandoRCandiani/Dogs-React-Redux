@@ -53,7 +53,7 @@ a {
 }
 
 .mainContainer {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .title {
@@ -99,4 +99,8 @@ a {
 
 .AppBody {
   flex: 1;
+}
+
+.VictoryContainer {
+  height: initial !important;
 }

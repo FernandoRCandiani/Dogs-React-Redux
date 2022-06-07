@@ -5,27 +5,15 @@ import { PHOTOS_GET } from '../../Api';
 import Error from '../Helper/Error';
 import Loading from '../Helper/Loading';
 import styles from './FeedPhotos.module.css';
+import { useSelector } from 'react-redux';
 
-const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
+const FeedPhotos = ({  setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
+  const {list} = useSelector(state => state.feed);
 
-  React.useEffect(() => {
-    async function fetchPhotos() {
-      const total = 6;
-      const { url, options } = PHOTOS_GET({ page, total, user });
-      const { response, json } = await request(url, options);
-      
-      if (response && response.ok && json.length < total) setInfinite(false);
-    }
-    fetchPhotos();
-  }, [request, user, page, setInfinite]);
-
-  if (error) return <Error error={error} />;
-  if (loading) return <Loading />;
-  if (data)
     return (
       <ul className={`${styles.feed} animeLeft`}>
-        {data.map((photo) => (
+        {list.map((photo) => (
           <FeedPhotosItem
             key={photo.id}
             photo={photo}
@@ -34,7 +22,6 @@ const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
         ))}
       </ul>
     );
-  else return null;
 };
 
 export default FeedPhotos;
